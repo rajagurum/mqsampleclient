@@ -1,5 +1,7 @@
-com/boa/mq/AppInitializer.class
-com/boa/mq/model/User.class
 com/boa/mq/JmsRestController.class
 com/boa/mq/AppConfig.class
+com/boa/mq/AppInitializer.class
+com/boa/mq/HelloWorldMDB.class
+com/boa/mq/model/User.class
+com/boa/mq/MQConfig.class
 com/boa/mq/JmsPutGet.class

@@ -138,19 +138,19 @@ public class JmsPutGet {
 			JmsConnectionFactory cf = ff.createConnectionFactory();
 
 			// Set the properties
-			cf.setStringProperty(WMQConstants.WMQ_HOST_NAME, HOST);
-			cf.setIntProperty(WMQConstants.WMQ_PORT, PORT);
-			cf.setStringProperty(WMQConstants.WMQ_CHANNEL, CHANNEL);
+			cf.setStringProperty(WMQConstants.WMQ_HOST_NAME, "192.168.1.7");
+			cf.setIntProperty(WMQConstants.WMQ_PORT, 1414);
+			cf.setStringProperty(WMQConstants.WMQ_CHANNEL, "");
 			cf.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE, WMQConstants.WMQ_CM_CLIENT);
-			cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, QMGR);
+			cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, "QM_Demo");
 			cf.setStringProperty(WMQConstants.WMQ_APPLICATIONNAME, "JmsPutGet (JMS)");
-			cf.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, true);
-			cf.setStringProperty(WMQConstants.USERID, APP_USER);
-			cf.setStringProperty(WMQConstants.PASSWORD, APP_PASSWORD);
+			cf.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, false);
+			cf.setStringProperty(WMQConstants.USERID, "");
+			cf.setStringProperty(WMQConstants.PASSWORD, "");
 
 			// Create JMS objects
 			context = cf.createContext();
-			destination = context.createQueue("queue:///" + QUEUE_NAME);
+			destination = context.createQueue("queue:///" + "QL2");
 			
 			consumer = context.createConsumer(destination); // autoclosable
 			receivedMessage = consumer.receiveBody(String.class, 15000); // in ms or 15 seconds
